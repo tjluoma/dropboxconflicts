@@ -32,11 +32,23 @@ Second, I suggest a reboot, but if you want to try doing this without that, try 
 		launchctl load ~/Library/LaunchAgents/com.tjluoma.dropbox-conflicts.plist
 
 
+### Q: “I have it installed, but how does it work?” ##
 
+A: I’m glad you asked. Every five minutes, `launchd` will check for files in your Dropbox have the words “conflicted copy” in the filename, which is what Dropbox uses when conflicts are created. If it finds any, it will show a notification in Mountain Lion or Mavericks’ Notification Center. It will look like this:
 
-## Also works well with... ##
+![](Notification-Center.png)
 
-My other script and Keyboard Maestro setup for comparing Dropbox duplicates: [km-diff-dropbox-duplicates].
+If you click on the notification, it will open a “Saved Search” in Finder which will also show any files with the words “conflicted copy” in the filename.
+
+Combine this with [km-diff-dropbox-duplicates] -- my other script and Keyboard Maestro setup for comparing Dropbox duplicates -- and you can compare the conflicted copy with its original. 
+
+### Q: “Ok, but what about Terminal?” ##
+
+A: If you run `dropbox-conflicts.sh` from the command line, it will show you the duplicate files, and then open the saved search in Finder.
+
+### Q: “I have a file that has the words ‘conflicted copy’ in the filename, but it’s not a Dropbox conflicted copy…”
+
+A: Yeah, you’re going to have to rename that, or else it will continually confuse this script. Sorry.
 
 
 <!-- Footnotes and References -->

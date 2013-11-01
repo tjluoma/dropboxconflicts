@@ -115,7 +115,7 @@ then
 		MSG="Found 1 file conflict"
 		TITLE='Dropbox Conflict Found'
 else
-		MSG="FOUND $COUNT file conflicts"
+		MSG="Found $COUNT file conflicts"
 		TITLE='Dropbox Conflicts Found'
 fi
 
@@ -132,7 +132,7 @@ then
 			-message "$MSG"  \
 			-title "$TITLE" \
 			-group "$NAME" \
-			-subtitle "Click to see Finder" \
+			-subtitle "Click to see conflicts in Finder" \
 			-execute "/usr/bin/open -a Finder \"${SS}\""
 else
 		terminal-notifier \
